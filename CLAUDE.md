@@ -59,8 +59,9 @@ sources: [소스파일명1, 소스파일명2]  # 근거가 된 원본 소스
 
 ### 탐색 우선순위
 
-1. `graphify-out/wiki/index.md` 가 존재하면 → 이것을 탐색 시작점으로 사용
-2. 존재하지 않으면 → `wiki/index.md` 를 사용
+1. **`graphify-out/graph.json`을 가장 먼저 읽는다** — 노드·엣지 전체 그래프 데이터가 담겨 있으며, 모든 질의의 1순위 탐색 소스다.
+2. `graphify-out/wiki/index.md` 가 존재하면 → 보조 탐색 인덱스로 사용
+3. 존재하지 않으면 → `wiki/index.md` 를 사용
 
 ### 아키텍처·구조 질문 시
 
@@ -94,11 +95,12 @@ python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; 
 
 질문을 받으면:
 
-1. `graphify-out/wiki/index.md` (없으면 `wiki/index.md`)를 읽어 관련 페이지를 파악한다
-2. 아키텍처·구조 관련이면 `graphify-out/GRAPH_REPORT.md`를 추가로 읽는다
-3. 관련 페이지들을 읽고 답변을 합성한다
-4. 답변이 독립적인 가치가 있으면 `wiki/analysis/`에 새 페이지로 저장한다
-5. `wiki/log.md`에 항목을 추가한다: `## [YYYY-MM-DD] query | 질문 요약`
+1. **`graphify-out/graph.json`을 먼저 읽어** 관련 노드·엣지·커뮤니티를 탐색한다 (최우선)
+2. `graphify-out/wiki/index.md` (없으면 `wiki/index.md`)를 읽어 관련 페이지를 보완 파악한다
+3. 아키텍처·구조 관련이면 `graphify-out/GRAPH_REPORT.md`를 추가로 읽는다
+4. 관련 페이지들을 읽고 답변을 합성한다
+5. 답변이 독립적인 가치가 있으면 `wiki/analysis/`에 새 페이지로 저장한다
+6. `wiki/log.md`에 항목을 추가한다: `## [YYYY-MM-DD] query | 질문 요약`
 
 ### 3. Lint (위키 점검)
 
