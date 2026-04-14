@@ -1,1 +1,2596 @@
-{"nodes":[{"id":"oidc-session-management_logto-blog_guide","label":"Implementing OIDC logout and session management: A complete guide","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":"https://blog.logto.io/oidc-session-management","captured_at":"2026-04-10","author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_openid_connect","label":"OpenID Connect (OIDC)","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_oauth_2_0","label":"OAuth 2.0","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_identity_provider","label":"Identity Provider (IdP)","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_relying_party","label":"Relying Party (RP) / Service Provider (SP)","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_sign_in_session","label":"Sign-in session / Authentication session","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_grant","label":"Grant","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_sso","label":"Single Sign-On (SSO)","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_authorization_code_flow","label":"Authorization Code flow","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_rp_session_management","label":"RP sign-in session management","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_session_cookie","label":"Session cookie (HttpOnly, Secure)","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_id_token","label":"ID Token","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_access_token","label":"Access Token","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_refresh_token","label":"Refresh Token","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_offline_access_scope","label":"offline_access scope","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_oidc_sign_out","label":"OIDC sign-out mechanisms","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_client_sign_out","label":"Clear tokens and local session at client","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_idp_sign_out","label":"Clear centralized sign-in session at IdP","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_end_session_endpoint","label":"End-session endpoint","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_back_channel_logout","label":"OIDC back-channel logout","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_back_channel_logout_spec","label":"OpenID Connect Back-Channel Logout 1.0","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_rationale_full_logout_idp","label":"Active IdP session causes automatic re-auth after client token clear","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null},{"id":"oidc-session-management_logto-blog_rationale_back_channel","label":"Sign out all RPs without extra user interaction","file_type":"document","source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null}],"edges":[{"source":"oidc-session-management_logto-blog_guide","target":"oidc-session-management_logto-blog_openid_connect","relation":"references","confidence":"EXTRACTED","confidence_score":0.98,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_openid_connect","target":"oidc-session-management_logto-blog_oauth_2_0","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.99,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_openid_connect","target":"oidc-session-management_logto-blog_identity_provider","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.95,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_openid_connect","target":"oidc-session-management_logto-blog_relying_party","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.95,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_sign_in_session","target":"oidc-session-management_logto-blog_identity_provider","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.92,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_grant","target":"oidc-session-management_logto-blog_identity_provider","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.9,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_sso","target":"oidc-session-management_logto-blog_identity_provider","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.93,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_relying_party","target":"oidc-session-management_logto-blog_identity_provider","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.96,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_authorization_code_flow","target":"oidc-session-management_logto-blog_openid_connect","relation":"implements","confidence":"EXTRACTED","confidence_score":0.94,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_relying_party","target":"oidc-session-management_logto-blog_authorization_code_flow","relation":"implements","confidence":"EXTRACTED","confidence_score":0.91,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_rp_session_management","target":"oidc-session-management_logto-blog_sign_in_session","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.97,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_sign_in_session","target":"oidc-session-management_logto-blog_session_cookie","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.93,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_relying_party","target":"oidc-session-management_logto-blog_id_token","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.92,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_relying_party","target":"oidc-session-management_logto-blog_access_token","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.92,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_relying_party","target":"oidc-session-management_logto-blog_refresh_token","relation":"shares_data_with","confidence":"EXTRACTED","confidence_score":0.88,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_refresh_token","target":"oidc-session-management_logto-blog_offline_access_scope","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.96,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_identity_provider","target":"oidc-session-management_logto-blog_id_token","relation":"shares_data_with","confidence":"INFERRED","confidence_score":0.82,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_id_token","target":"oidc-session-management_logto-blog_access_token","relation":"semantically_similar_to","confidence":"INFERRED","confidence_score":0.78,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_oidc_sign_out","target":"oidc-session-management_logto-blog_client_sign_out","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.98,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_oidc_sign_out","target":"oidc-session-management_logto-blog_idp_sign_out","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.98,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_oidc_sign_out","target":"oidc-session-management_logto-blog_back_channel_logout","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.98,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_idp_sign_out","target":"oidc-session-management_logto-blog_end_session_endpoint","relation":"implements","confidence":"EXTRACTED","confidence_score":0.95,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_idp_sign_out","target":"oidc-session-management_logto-blog_identity_provider","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.97,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_back_channel_logout","target":"oidc-session-management_logto-blog_back_channel_logout_spec","relation":"cites","confidence":"EXTRACTED","confidence_score":0.99,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_back_channel_logout","target":"oidc-session-management_logto-blog_identity_provider","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.94,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_back_channel_logout","target":"oidc-session-management_logto-blog_relying_party","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":0.93,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_client_sign_out","target":"oidc-session-management_logto-blog_idp_sign_out","relation":"semantically_similar_to","confidence":"INFERRED","confidence_score":0.8,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_rationale_full_logout_idp","target":"oidc-session-management_logto-blog_idp_sign_out","relation":"rationale_for","confidence":"EXTRACTED","confidence_score":0.94,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_rationale_back_channel","target":"oidc-session-management_logto-blog_back_channel_logout","relation":"rationale_for","confidence":"EXTRACTED","confidence_score":0.93,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0},{"source":"oidc-session-management_logto-blog_guide","target":"oidc-session-management_logto-blog_oidc_sign_out","relation":"references","confidence":"EXTRACTED","confidence_score":0.96,"source_file":"raw/oidc-session-management_logto-blog.md","source_location":null,"weight":1.0}],"hyperedges":[{"id":"oidc-session-management_logto-blog_oidc_auth_flow","label":"OIDC authentication flow (RP redirect, IdP session, code, token exchange)","nodes":["oidc-session-management_logto-blog_relying_party","oidc-session-management_logto-blog_identity_provider","oidc-session-management_logto-blog_sign_in_session","oidc-session-management_logto-blog_grant","oidc-session-management_logto-blog_authorization_code_flow"],"relation":"participate_in","confidence":"EXTRACTED","confidence_score":0.91,"source_file":"raw/oidc-session-management_logto-blog.md"},{"id":"oidc-session-management_logto-blog_sign_out_three_pillars","label":"Multi-faceted OIDC sign-out (client, IdP session, back-channel)","nodes":["oidc-session-management_logto-blog_oidc_sign_out","oidc-session-management_logto-blog_client_sign_out","oidc-session-management_logto-blog_idp_sign_out","oidc-session-management_logto-blog_back_channel_logout"],"relation":"form","confidence":"EXTRACTED","confidence_score":0.92,"source_file":"raw/oidc-session-management_logto-blog.md"},{"id":"oidc-session-management_logto-blog_rp_client_tokens","label":"Client-side authentication status via IdP-issued tokens","nodes":["oidc-session-management_logto-blog_relying_party","oidc-session-management_logto-blog_id_token","oidc-session-management_logto-blog_access_token","oidc-session-management_logto-blog_refresh_token"],"relation":"implement","confidence":"EXTRACTED","confidence_score":0.9,"source_file":"raw/oidc-session-management_logto-blog.md"}],"input_tokens":0,"output_tokens":0}
+{
+  "nodes": [
+    {
+      "id": "architecture_autopus_adk",
+      "label": "Autopus-ADK Architecture",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_autopus_adk",
+      "label": "Autopus-ADK README",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_autopus_adk",
+      "label": "Autopus-ADK (Agentic Development Kit)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_ax_agent_experience",
+      "label": "AX \u2014 Agent Experience",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_ralf_loop",
+      "label": "RALF Loop (RED\u2192GREEN\u2192REFACTOR\u2192LOOP)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_trust5",
+      "label": "TRUST 5 Code Review Framework",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_lore_protocol",
+      "label": "Lore Decision Protocol (9-trailer)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_multimodel_orchestration",
+      "label": "Multi-Model Orchestration",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_agent_pipeline",
+      "label": "7-Phase Multi-Agent Pipeline",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_worktree_isolation",
+      "label": "Parallel Worktree Isolation",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_spec_format",
+      "label": "SPEC Format (EARS requirements)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_300line_limit",
+      "label": "300-Line File Size Limit",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_adaptive_quality",
+      "label": "Adaptive Quality Model Routing",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_platform_adapter",
+      "label": "Platform Adapter Architecture",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_debate_strategy",
+      "label": "Debate Strategy (Two-Phase with Judge)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_consensus_strategy",
+      "label": "Consensus Strategy (Key-Based Merge)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_pipeline_checkpoint",
+      "label": "Pipeline Checkpoint System",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_experiment_loop",
+      "label": "Autonomous Experiment Loop",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_e2e_scenarios",
+      "label": "E2E Scenario Generation",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_hook_result_collection",
+      "label": "Hook-Based Result Collection",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_detach_mode",
+      "label": "Detach Mode (Async Job Execution)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_sigmap",
+      "label": "SigMap (AST-based API Signature Extraction)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_executor_profile",
+      "label": "Executor Profile System",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_cli",
+      "label": "pkg/internal/cli \u2014 CLI Command Layer",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_adapter",
+      "label": "pkg/adapter \u2014 Platform Abstraction",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_orchestra",
+      "label": "pkg/orchestra \u2014 Multi-Model Orchestration",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_lore",
+      "label": "pkg/lore \u2014 Decision Tracking",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_pipeline",
+      "label": "pkg/pipeline \u2014 Pipeline State Persistence",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_experiment",
+      "label": "pkg/experiment \u2014 Autonomous Experiment Loop",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_e2e",
+      "label": "pkg/e2e \u2014 E2E Scenario Engine",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_sigmap",
+      "label": "pkg/sigmap \u2014 AST Signature Extractor",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pkg_adapter2",
+      "label": "pkg/adapter \u2014 Platform Abstraction (impl)",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_planner",
+      "label": "Planner Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_executor",
+      "label": "Executor Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/executor.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_tester",
+      "label": "Tester Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/tester.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_reviewer",
+      "label": "Reviewer Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/reviewer.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_validator",
+      "label": "Validator Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/validator.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_security_auditor",
+      "label": "Security Auditor Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/security-auditor.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_annotator",
+      "label": "Annotator Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/annotator.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_architect",
+      "label": "Architect Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/architect.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_debugger",
+      "label": "Debugger Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/debugger.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_explorer",
+      "label": "Explorer Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/explorer.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_frontend_specialist",
+      "label": "Frontend Specialist Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/frontend-specialist.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_ux_validator",
+      "label": "UX Validator Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/ux-validator.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_spec_writer",
+      "label": "Spec Writer Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/spec-writer.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_deep_worker",
+      "label": "Deep Worker Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/deep-worker.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_ax_design",
+      "label": "Rationale: AX Design Philosophy",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_300line_limit",
+      "label": "Rationale: 300-Line Limit",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_multimodel_debate",
+      "label": "Rationale: Multi-Model Debate",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rationale_ralf_loop",
+      "label": "Rationale: RALF Self-Healing Loop",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "devops_agent",
+      "label": "DevOps Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/devops.md"
+    },
+    {
+      "id": "perf_engineer_agent",
+      "label": "Perf-Engineer Agent",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/perf-engineer.md"
+    },
+    {
+      "id": "rule_lore_commit",
+      "label": "Lore Commit Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/lore-commit.md"
+    },
+    {
+      "id": "rule_objective_reasoning",
+      "label": "Objective Reasoning Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/objective-reasoning.md"
+    },
+    {
+      "id": "rule_subagent_delegation",
+      "label": "Subagent Delegation Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/subagent-delegation.md"
+    },
+    {
+      "id": "rule_worktree_safety",
+      "label": "Worktree Safety Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/worktree-safety.md"
+    },
+    {
+      "id": "rule_doc_storage",
+      "label": "Document Storage Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/doc-storage.md"
+    },
+    {
+      "id": "rule_file_size_limit",
+      "label": "File Size Limit Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/file-size-limit.md"
+    },
+    {
+      "id": "rule_branding",
+      "label": "Autopus Branding Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/branding.md"
+    },
+    {
+      "id": "rule_context7_docs",
+      "label": "Context7 Documentation Auto-Fetch Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/context7-docs.md"
+    },
+    {
+      "id": "rule_project_identity",
+      "label": "Project Identity Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/project-identity.md"
+    },
+    {
+      "id": "rule_language_policy",
+      "label": "Language Policy Rule",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/language-policy.md"
+    },
+    {
+      "id": "skill_using_autopus",
+      "label": "Using Autopus-ADK Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/using-autopus.md"
+    },
+    {
+      "id": "skill_context_search",
+      "label": "Context Search Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/context-search.md"
+    },
+    {
+      "id": "skill_lore_commit",
+      "label": "Lore Commit Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/lore-commit.md"
+    },
+    {
+      "id": "skill_planning",
+      "label": "Planning Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/planning.md"
+    },
+    {
+      "id": "skill_prd",
+      "label": "PRD Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/prd.md"
+    },
+    {
+      "id": "skill_ddd",
+      "label": "DDD (Disciplined Design Development) Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ddd.md"
+    },
+    {
+      "id": "skill_experiment",
+      "label": "Experiment Loop (XLOOP) Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/experiment.md"
+    },
+    {
+      "id": "skill_playwright_cli",
+      "label": "Playwright CLI Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/playwright-cli.md"
+    },
+    {
+      "id": "concept_lore_commit_format",
+      "label": "Lore Commit Format",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/lore-commit.md"
+    },
+    {
+      "id": "concept_spec_document",
+      "label": "SPEC Document",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/doc-storage.md"
+    },
+    {
+      "id": "concept_autopus_yaml",
+      "label": "autopus.yaml Configuration",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/using-autopus.md"
+    },
+    {
+      "id": "concept_ax_anchor_tag",
+      "label": "@AX:ANCHOR Tag",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/agents/perf-engineer.md"
+    },
+    {
+      "id": "concept_xloop",
+      "label": "XLOOP Experiment Loop",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/experiment.md"
+    },
+    {
+      "id": "concept_circuit_breaker",
+      "label": "Circuit Breaker (XLOOP)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/experiment.md"
+    },
+    {
+      "id": "concept_simplicity_gate",
+      "label": "Simplicity Gate (XLOOP)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/experiment.md"
+    },
+    {
+      "id": "concept_moscow_prioritization",
+      "label": "MoSCoW Prioritization",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/planning.md"
+    },
+    {
+      "id": "concept_ears_format",
+      "label": "EARS Requirements Format",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/planning.md"
+    },
+    {
+      "id": "concept_analyze_preserve_improve",
+      "label": "ANALYZE-PRESERVE-IMPROVE Cycle",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ddd.md"
+    },
+    {
+      "id": "concept_worktree_parallel_execution",
+      "label": "Parallel Worktree Execution",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/worktree-safety.md"
+    },
+    {
+      "id": "concept_context7_mcp",
+      "label": "Context7 MCP Tool",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/rules/context7-docs.md"
+    },
+    {
+      "id": "concept_auto_continue_md",
+      "label": ".auto-continue.md Session Continuity File",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/context-search.md"
+    },
+    {
+      "id": "concept_prd_planning_pipeline",
+      "label": "PRD \u2192 Planning \u2192 SPEC Pipeline",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/prd.md"
+    },
+    {
+      "id": "concept_strangler_fig_pattern",
+      "label": "Strangler Fig Pattern",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ddd.md"
+    },
+    {
+      "id": "concept_branch_by_abstraction",
+      "label": "Branch by Abstraction Pattern",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ddd.md"
+    },
+    {
+      "id": "subagent_dev_skill",
+      "label": "Subagent Development Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md"
+    },
+    {
+      "id": "subagent_dev_agent_definition",
+      "label": "Agent Definition Format (Claude Code 2.0+)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md"
+    },
+    {
+      "id": "subagent_dev_orchestration_patterns",
+      "label": "Orchestration Patterns (Fan-Out, Pipeline, Supervisor)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md"
+    },
+    {
+      "id": "subagent_dev_parallel_execution",
+      "label": "Parallel Execution Principle",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md"
+    },
+    {
+      "id": "ast_refactoring_skill",
+      "label": "AST Refactoring Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ast-refactoring.md"
+    },
+    {
+      "id": "ast_refactoring_go_tools",
+      "label": "Go AST Tools (gorename, gofmt, gomv)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ast-refactoring.md"
+    },
+    {
+      "id": "browser_automation_skill",
+      "label": "Browser Automation Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/browser-automation.md"
+    },
+    {
+      "id": "browser_automation_snapshot_act_verify",
+      "label": "Snapshot-Act-Verify Workflow",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/browser-automation.md"
+    },
+    {
+      "id": "ax_annotation_skill",
+      "label": "@AX Annotation Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md"
+    },
+    {
+      "id": "ax_annotation_tag_types",
+      "label": "@AX Tag Types (NOTE, WARN, ANCHOR, TODO)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md"
+    },
+    {
+      "id": "ax_annotation_cycle_tracking",
+      "label": "@AX:CYCLE Tracking (TODO Escalation)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md"
+    },
+    {
+      "id": "ax_annotation_canonical_source",
+      "label": "ax.go GenerateAXInstruction() Canonical Source",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md"
+    },
+    {
+      "id": "api_design_skill",
+      "label": "API Design Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/api-design.md"
+    },
+    {
+      "id": "api_design_restful_principles",
+      "label": "RESTful API Design Principles",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/api-design.md"
+    },
+    {
+      "id": "api_design_grpc",
+      "label": "gRPC Proto Design",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/api-design.md"
+    },
+    {
+      "id": "frontend_verify_skill",
+      "label": "Frontend Verify Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/frontend-verify.md"
+    },
+    {
+      "id": "frontend_verify_5phase_pipeline",
+      "label": "Frontend Verify 5-Phase Pipeline",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/frontend-verify.md"
+    },
+    {
+      "id": "frontend_verify_vlm_check",
+      "label": "VLM Visual Check (Claude Vision)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/frontend-verify.md"
+    },
+    {
+      "id": "migration_skill",
+      "label": "Migration Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/migration.md"
+    },
+    {
+      "id": "migration_adapter_pattern",
+      "label": "Adapter Pattern for Breaking Changes",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/migration.md"
+    },
+    {
+      "id": "idea_skill",
+      "label": "Idea Skill (Multi-Provider Debate)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/idea.md"
+    },
+    {
+      "id": "idea_skill_2round_debate",
+      "label": "2-Round Debate Enforcement",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/idea.md"
+    },
+    {
+      "id": "idea_skill_blind_judge",
+      "label": "Blind Synthesis Judge (Anti-Bias Subagent)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/idea.md"
+    },
+    {
+      "id": "idea_skill_ice_scoring",
+      "label": "ICE Scoring in Idea Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/idea.md"
+    },
+    {
+      "id": "idea_skill_ost_framework",
+      "label": "Opportunity-Solution Tree (OST) Framework",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/idea.md"
+    },
+    {
+      "id": "security_audit_skill",
+      "label": "Security Audit Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/security-audit.md"
+    },
+    {
+      "id": "security_audit_owasp_top10",
+      "label": "OWASP Top 10 Checklist",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/security-audit.md"
+    },
+    {
+      "id": "performance_skill",
+      "label": "Performance Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/performance.md"
+    },
+    {
+      "id": "performance_pprof",
+      "label": "pprof Profiling",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/performance.md"
+    },
+    {
+      "id": "brainstorming_skill",
+      "label": "Brainstorming Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/brainstorming.md"
+    },
+    {
+      "id": "brainstorming_ice_scoring",
+      "label": "ICE Scoring",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/brainstorming.md"
+    },
+    {
+      "id": "tdd_skill",
+      "label": "TDD Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/tdd.md"
+    },
+    {
+      "id": "tdd_red_green_refactor",
+      "label": "RED-GREEN-REFACTOR Cycle",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/tdd.md"
+    },
+    {
+      "id": "verification_skill",
+      "label": "Verification Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/verification.md"
+    },
+    {
+      "id": "verification_quality_gate",
+      "label": "Automated Quality Gate",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/verification.md"
+    },
+    {
+      "id": "agent_presets_skill",
+      "label": "Agent Presets Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md"
+    },
+    {
+      "id": "agent_presets_pipeline_behavior",
+      "label": "Preset-Conditional Pipeline Phase Skipping",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md"
+    },
+    {
+      "id": "worktree_isolation_skill",
+      "label": "Worktree Isolation Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/worktree-isolation.md"
+    },
+    {
+      "id": "worktree_isolation_file_ownership",
+      "label": "File Ownership Conflict Detection",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/worktree-isolation.md"
+    },
+    {
+      "id": "adaptive_quality_skill",
+      "label": "Adaptive Quality Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/adaptive-quality.md"
+    },
+    {
+      "id": "adaptive_quality_model_mapping",
+      "label": "Complexity-to-Model Mapping Table",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/adaptive-quality.md"
+    },
+    {
+      "id": "entropy_scan_skill",
+      "label": "Entropy Scan Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/entropy-scan.md"
+    },
+    {
+      "id": "entropy_scan_hotspot_analysis",
+      "label": "Hotspot Analysis (Change Frequency \u00d7 Complexity)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/entropy-scan.md"
+    },
+    {
+      "id": "double_diamond_skill",
+      "label": "Double Diamond Design Methodology Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/double-diamond.md"
+    },
+    {
+      "id": "double_diamond_discover_define",
+      "label": "Discover-Define Phase (Problem Finding)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/double-diamond.md"
+    },
+    {
+      "id": "skill_agent_pipeline",
+      "label": "Agent Pipeline Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    },
+    {
+      "id": "skill_spec_review",
+      "label": "SPEC Review Gate Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/spec-review.md"
+    },
+    {
+      "id": "skill_agent_teams",
+      "label": "Agent Teams Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-teams.md"
+    },
+    {
+      "id": "skill_docker",
+      "label": "Docker Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/docker.md"
+    },
+    {
+      "id": "skill_review",
+      "label": "Code Review Skill (TRUST 5)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/review.md"
+    },
+    {
+      "id": "skill_git_worktrees",
+      "label": "Git Worktrees Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/git-worktrees.md"
+    },
+    {
+      "id": "skill_debugging",
+      "label": "Debugging Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/debugging.md"
+    },
+    {
+      "id": "skill_ci_cd",
+      "label": "CI/CD Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ci-cd.md"
+    },
+    {
+      "id": "skill_testing_strategy",
+      "label": "Testing Strategy Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/testing-strategy.md"
+    },
+    {
+      "id": "skill_database",
+      "label": "Database Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/database.md"
+    },
+    {
+      "id": "skill_hash_anchored_edit",
+      "label": "Hash-Anchored Edit Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/hash-anchored-edit.md"
+    },
+    {
+      "id": "skill_refactoring",
+      "label": "Refactoring Skill",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/refactoring.md"
+    },
+    {
+      "id": "profile_executor_go",
+      "label": "Go Executor Profile",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/profiles/executor/go.md"
+    },
+    {
+      "id": "profile_executor_python",
+      "label": "Python Executor Profile",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/profiles/executor/python.md"
+    },
+    {
+      "id": "profile_executor_rust",
+      "label": "Rust Executor Profile",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/profiles/executor/rust.md"
+    },
+    {
+      "id": "profile_executor_frontend",
+      "label": "Frontend Executor Profile",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/profiles/executor/frontend.md"
+    },
+    {
+      "id": "profile_executor_typescript",
+      "label": "TypeScript Executor Profile",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/profiles/executor/typescript.md"
+    },
+    {
+      "id": "docs_readme_ko",
+      "label": "Autopus-ADK README (Korean)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/docs/README.ko.md"
+    },
+    {
+      "id": "hook_opencode_complete",
+      "label": "OpenCode Complete Hook",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/content/hooks/hook-opencode-complete.ts"
+    },
+    {
+      "id": "concept_5phase_pipeline",
+      "label": "5-Phase Multi-Agent Pipeline",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    },
+    {
+      "id": "concept_lead_builder_guardian",
+      "label": "Lead-Builder-Guardian Team Roles",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-teams.md"
+    },
+    {
+      "id": "concept_orchestra_engine",
+      "label": "Orchestra Engine (Multi-Provider)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/spec-review.md"
+    },
+    {
+      "id": "concept_multistage_docker",
+      "label": "Multi-Stage Docker Build",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/docker.md"
+    },
+    {
+      "id": "concept_coverage_85",
+      "label": "85% Coverage Gate",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/ci-cd.md"
+    },
+    {
+      "id": "concept_test_pyramid",
+      "label": "Test Pyramid Strategy",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/testing-strategy.md"
+    },
+    {
+      "id": "concept_hash_anchor",
+      "label": "SHA256 Hash Anchor File Integrity",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/hash-anchored-edit.md"
+    },
+    {
+      "id": "concept_strangler_fig",
+      "label": "Strangler Fig Pattern (Refactoring)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/refactoring.md"
+    },
+    {
+      "id": "concept_ax_philosophy",
+      "label": "AX (Agent Experience) Philosophy",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/docs/README.ko.md"
+    },
+    {
+      "id": "concept_profile_injection",
+      "label": "Profile Injection into Executor Prompts",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    },
+    {
+      "id": "concept_quality_modes",
+      "label": "Quality Modes (Ultra/Balanced/Adaptive)",
+      "file_type": "document",
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    },
+    {
+      "id": "concept_bidirectional_ipc",
+      "label": "Bidirectional IPC (SPEC-ORCH-017)",
+      "file_type": "code",
+      "source_file": "raw/autopus-adk/content/hooks/hook-opencode-complete.ts"
+    }
+  ],
+  "edges": [
+    {
+      "source": "rationale_ax_design",
+      "target": "concept_ax_agent_experience",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rationale_300line_limit",
+      "target": "concept_300line_limit",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rationale_multimodel_debate",
+      "target": "concept_multimodel_orchestration",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rationale_ralf_loop",
+      "target": "concept_ralf_loop",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_autopus_adk",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_ax_agent_experience",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_ralf_loop",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_trust5",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_multimodel_orchestration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_agent_pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_worktree_isolation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_spec_format",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_300line_limit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_autopus_adk",
+      "target": "concept_adaptive_quality",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_platform_adapter",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_debate_strategy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_consensus_strategy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_pipeline_checkpoint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_detach_mode",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_autopus_adk",
+      "target": "concept_sigmap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_orchestra",
+      "target": "concept_multimodel_orchestration",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_lore",
+      "target": "concept_lore_protocol",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_pipeline",
+      "target": "concept_pipeline_checkpoint",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_experiment",
+      "target": "concept_experiment_loop",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_e2e",
+      "target": "concept_e2e_scenarios",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_sigmap",
+      "target": "concept_sigmap",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_adapter",
+      "target": "concept_platform_adapter",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "concept_spec_format",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "concept_agent_pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "agent_executor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "agent_tester",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "agent_reviewer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_planner",
+      "target": "agent_security_auditor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/planner.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_executor",
+      "target": "concept_300line_limit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/executor.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_executor",
+      "target": "concept_spec_format",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/executor.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_reviewer",
+      "target": "concept_trust5",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/reviewer.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_spec_writer",
+      "target": "concept_spec_format",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/agents/spec-writer.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_debate_strategy",
+      "target": "concept_multimodel_orchestration",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_consensus_strategy",
+      "target": "concept_multimodel_orchestration",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_ralf_loop",
+      "target": "concept_agent_pipeline",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_worktree_isolation",
+      "target": "concept_agent_pipeline",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/autopus-adk/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_lore_commit",
+      "target": "concept_lore_commit_format",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/lore-commit.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_lore_commit",
+      "target": "concept_lore_commit_format",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/lore-commit.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_branding",
+      "target": "rule_lore_commit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/branding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_branding",
+      "target": "rule_file_size_limit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/branding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_branding",
+      "target": "rule_subagent_delegation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/branding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_branding",
+      "target": "rule_language_policy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/branding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_context7_docs",
+      "target": "concept_context7_mcp",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/context7-docs.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_doc_storage",
+      "target": "concept_spec_document",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/doc-storage.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_planning",
+      "target": "concept_ears_format",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/planning.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_planning",
+      "target": "concept_moscow_prioritization",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/planning.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_prd",
+      "target": "skill_planning",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/prd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_prd",
+      "target": "concept_spec_document",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/prd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_ddd",
+      "target": "concept_analyze_preserve_improve",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ddd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_ddd",
+      "target": "concept_strangler_fig_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ddd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_ddd",
+      "target": "concept_ax_anchor_tag",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ddd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_experiment",
+      "target": "concept_xloop",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/experiment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_experiment",
+      "target": "concept_circuit_breaker",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/experiment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_experiment",
+      "target": "concept_simplicity_gate",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/experiment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rule_worktree_safety",
+      "target": "concept_worktree_parallel_execution",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/rules/worktree-safety.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_circuit_breaker",
+      "target": "concept_simplicity_gate",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/experiment.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_strangler_fig_pattern",
+      "target": "concept_branch_by_abstraction",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "raw/autopus-adk/content/skills/ddd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_dev_skill",
+      "target": "subagent_dev_agent_definition",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_dev_skill",
+      "target": "subagent_dev_orchestration_patterns",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_dev_skill",
+      "target": "subagent_dev_parallel_execution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/subagent-dev.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ast_refactoring_skill",
+      "target": "ast_refactoring_go_tools",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ast-refactoring.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "browser_automation_skill",
+      "target": "browser_automation_snapshot_act_verify",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/browser-automation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ax_annotation_skill",
+      "target": "ax_annotation_canonical_source",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ax_annotation_skill",
+      "target": "ax_annotation_tag_types",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ax_annotation_skill",
+      "target": "ax_annotation_cycle_tracking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ax-annotation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_design_skill",
+      "target": "api_design_restful_principles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/api-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_design_skill",
+      "target": "api_design_grpc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/api-design.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_verify_skill",
+      "target": "frontend_verify_5phase_pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/frontend-verify.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_verify_skill",
+      "target": "frontend_verify_vlm_check",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/frontend-verify.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "migration_skill",
+      "target": "migration_adapter_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/migration.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "idea_skill",
+      "target": "idea_skill_2round_debate",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/idea.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "idea_skill",
+      "target": "idea_skill_blind_judge",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/idea.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "idea_skill",
+      "target": "idea_skill_ice_scoring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/idea.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "idea_skill",
+      "target": "idea_skill_ost_framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/idea.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "idea_skill_ice_scoring",
+      "target": "brainstorming_ice_scoring",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "raw/autopus-adk/content/skills/idea.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "security_audit_skill",
+      "target": "security_audit_owasp_top10",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/security-audit.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "performance_skill",
+      "target": "performance_pprof",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/performance.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tdd_skill",
+      "target": "tdd_red_green_refactor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/tdd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "verification_skill",
+      "target": "verification_quality_gate",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/verification.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "verification_skill",
+      "target": "tdd_skill",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/autopus-adk/content/skills/verification.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_presets_skill",
+      "target": "agent_presets_pipeline_behavior",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_presets_pipeline_behavior",
+      "target": "frontend_verify_skill",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_presets_pipeline_behavior",
+      "target": "security_audit_skill",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_presets_pipeline_behavior",
+      "target": "performance_skill",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_presets_pipeline_behavior",
+      "target": "ax_annotation_skill",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-presets.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "worktree_isolation_skill",
+      "target": "worktree_isolation_file_ownership",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/worktree-isolation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "worktree_isolation_skill",
+      "target": "subagent_dev_parallel_execution",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "raw/autopus-adk/content/skills/worktree-isolation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "adaptive_quality_skill",
+      "target": "adaptive_quality_model_mapping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/adaptive-quality.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "entropy_scan_skill",
+      "target": "entropy_scan_hotspot_analysis",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/entropy-scan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "entropy_scan_skill",
+      "target": "ast_refactoring_skill",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "raw/autopus-adk/content/skills/entropy-scan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "double_diamond_skill",
+      "target": "double_diamond_discover_define",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/double-diamond.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "double_diamond_skill",
+      "target": "idea_skill",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "raw/autopus-adk/content/skills/double-diamond.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "double_diamond_skill",
+      "target": "brainstorming_skill",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "raw/autopus-adk/content/skills/double-diamond.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_pipeline",
+      "target": "concept_5phase_pipeline",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_pipeline",
+      "target": "concept_quality_modes",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_pipeline",
+      "target": "concept_profile_injection",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_pipeline",
+      "target": "skill_agent_teams",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_pipeline",
+      "target": "skill_git_worktrees",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_agent_teams",
+      "target": "concept_lead_builder_guardian",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-teams.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_spec_review",
+      "target": "concept_orchestra_engine",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/spec-review.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_review",
+      "target": "concept_coverage_85",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/review.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_ci_cd",
+      "target": "concept_coverage_85",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/ci-cd.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_testing_strategy",
+      "target": "concept_test_pyramid",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/testing-strategy.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_testing_strategy",
+      "target": "concept_coverage_85",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/testing-strategy.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_hash_anchored_edit",
+      "target": "concept_hash_anchor",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/hash-anchored-edit.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "skill_refactoring",
+      "target": "concept_strangler_fig",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/refactoring.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "profile_executor_go",
+      "target": "concept_coverage_85",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/profiles/executor/go.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "profile_executor_python",
+      "target": "concept_coverage_85",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/profiles/executor/python.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_profile_injection",
+      "target": "profile_executor_go",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_profile_injection",
+      "target": "profile_executor_python",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "concept_profile_injection",
+      "target": "profile_executor_rust",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "concept_profile_injection",
+      "target": "profile_executor_frontend",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "concept_profile_injection",
+      "target": "profile_executor_typescript",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "docs_readme_ko",
+      "target": "concept_ax_philosophy",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/docs/README.ko.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docs_readme_ko",
+      "target": "concept_5phase_pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/docs/README.ko.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "hook_opencode_complete",
+      "target": "concept_bidirectional_ipc",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "raw/autopus-adk/content/hooks/hook-opencode-complete.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "hook_opencode_complete",
+      "target": "concept_orchestra_engine",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/content/hooks/hook-opencode-complete.ts",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "skill_docker",
+      "target": "skill_ci_cd",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "raw/autopus-adk/content/skills/docker.md",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "concept_ax_philosophy",
+      "target": "concept_5phase_pipeline",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "raw/autopus-adk/docs/README.ko.md",
+      "source_location": null,
+      "weight": 0.8
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "autopus_7phase_pipeline",
+      "label": "Autopus 7-Phase Multi-Agent Pipeline",
+      "nodes": [
+        "agent_planner",
+        "agent_tester",
+        "agent_executor",
+        "agent_annotator",
+        "agent_validator",
+        "agent_reviewer",
+        "agent_security_auditor"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "raw/autopus-adk/README.md"
+    },
+    {
+      "id": "multimodel_orchestration_strategies",
+      "label": "Multi-Model Orchestration Strategy Set",
+      "nodes": [
+        "concept_debate_strategy",
+        "concept_consensus_strategy",
+        "concept_detach_mode",
+        "pkg_orchestra"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "raw/autopus-adk/ARCHITECTURE.md"
+    },
+    {
+      "id": "prd_planning_spec_pipeline",
+      "label": "PRD \u2192 Planning \u2192 SPEC Document Pipeline",
+      "nodes": [
+        "skill_prd",
+        "skill_planning",
+        "concept_spec_document"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "raw/autopus-adk/content/skills/prd.md"
+    },
+    {
+      "id": "xloop_decision_mechanism",
+      "label": "XLOOP Keep/Discard Decision Mechanism",
+      "nodes": [
+        "concept_xloop",
+        "concept_circuit_breaker",
+        "concept_simplicity_gate"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "raw/autopus-adk/content/skills/experiment.md"
+    },
+    {
+      "id": "branding_rule_system",
+      "label": "Autopus Branding and Rule Enforcement System",
+      "nodes": [
+        "rule_branding",
+        "rule_lore_commit",
+        "rule_file_size_limit",
+        "rule_subagent_delegation",
+        "rule_language_policy"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "raw/autopus-adk/content/rules/branding.md"
+    },
+    {
+      "id": "quality_assurance_pipeline",
+      "label": "Quality Assurance Pipeline (TDD + Verification + AX Annotation)",
+      "nodes": [
+        "tdd_skill",
+        "verification_skill",
+        "ax_annotation_skill"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/autopus-adk/content/skills/tdd.md"
+    },
+    {
+      "id": "parallel_agent_execution_system",
+      "label": "Parallel Agent Execution System",
+      "nodes": [
+        "subagent_dev_skill",
+        "worktree_isolation_skill",
+        "adaptive_quality_skill"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "raw/autopus-adk/content/skills/worktree-isolation.md"
+    },
+    {
+      "id": "pipeline_quality_gate_triad",
+      "label": "Pipeline Quality Gate: Validator + Reviewer + Security Auditor",
+      "nodes": [
+        "concept_5phase_pipeline",
+        "concept_coverage_85",
+        "skill_testing_strategy"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    },
+    {
+      "id": "parallel_executor_isolation_merge",
+      "label": "Parallel Executor with Worktree Isolation",
+      "nodes": [
+        "concept_5phase_pipeline",
+        "skill_git_worktrees",
+        "concept_profile_injection"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "raw/autopus-adk/content/skills/agent-pipeline.md"
+    }
+  ],
+  "input_tokens": 12500,
+  "output_tokens": 2800
+}
