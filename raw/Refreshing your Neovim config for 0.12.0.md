@@ -1,0 +1,281 @@
+---
+title: "Refreshing your Neovim config for 0.12.0"
+source: "https://justinhj.github.io/2026/04/06/refreshing-your-neovim-config-for-0-12-0.html"
+author:
+  - "[[Functional[Justin]]]"
+published: 2026-04-06
+created: 2026-04-27
+description: "Principal Software Engineer. Streaming data at scale. Generative AI. Functional Programming. Neovim. Emacs."
+tags:
+  - "clippings"
+---
+## Introduction
+
+Neovim version 0.12.1 was just released and you can check the release news here:
+
+[Neovim v0.12.1 release news](https://github.com/neovim/neovim/blob/v0.12.1/runtime/doc/news.txt)
+
+This is a massive release bringing a number of core capabilities that used to require external plugins into Neovim as built-in features. I took this opportunity to do a full refresh of my config. This was required as over the last few years I have pulled in many plugins only to forget what they are for. My config had too many files, too much surface area when trying to make changes or fix annoyances.
+
+Rather than use an off the shelf config I had built it all by hand to meet my needs perfectly, but without careful maintenance it becomes an overgrown mess. In particular my lsp configurations and key maps were spread all over different places, and there was cruft I wasn't even using such as luasnip (hrsh7th/nvim-cmp won't work without a snippets plugin whether you want one or not).
+
+I considered two options for the refresh:
+
+1. Gradually fix it a bit at a time.
+2. Kill it with fire and start again.
+
+Given the mess my old config had gotten to I decided the latter would be much more manageable.
+
+## Running two configs on the same machine
+
+It's a lot easier to work on a new config if you still have the old one around for reference, and can easily run the new and the old together. One way to make this work is the `NVIM_APPNAME` environment variable. Normally Neovim expects the various working folders, including the configuration, to be in the nvim folder.
+
+By using the `NVIM_APPNAME` environment variable you can set it to something different, I chose nvim-next. This let's you build an entirely new config and leave your old one intact.
+
+I started by manually creating the new folders (MacOS example).
+
+```
+mkdir -p ~/.config/nvim-next
+mkdir -p ~/.local/share/nvim-next
+mkdir -p ~/.local/state/nvim-next
+mkdir -p ~/.cache/nvim-next
+```
+
+Now it's possible to run with a fresh config without worrying about messing up the old one.
+
+```
+NVIM_APPNAME=nvim-next nvim
+```
+
+During development of the new config I used this command to open them both up together.
+
+```
+NVIM_APPNAME=nvim-next nvim -O ~/.config/nvim-next/init.lua ~/.config/nvim/init.lua
+```
+
+Finally, you may want to include the environment variable in your shell config to use it as your "real" config more easily.
+
+```
+export NVIM_APPNAME=nvim-next
+```
+
+## Replicating the config
+
+I needed some method to migrate this without missing anything so I went through the init.lua file and copied over anything that was obviously needed and unchanged. In particular, the vim options have not changed.
+
+```
+vim.g.mapleader = ","
+-- Prevents showing extra messages when using completion
+vim.opt.shortmess:append("c")
+-- Sets the height of the command line area at the bottom
+vim.opt.cmdheight = 2
+-- Displays the line number for the current line
+vim.opt.number = true
+-- Displays line numbers relative to the current cursor position
+vim.opt.relativenumber = true
+-- Time in milliseconds to wait for a mapped sequence to complete
+vim.opt.timeoutlen = 500
+-- Time in milliseconds of inactivity before calling CursorHold or writing to swap
+vim.opt.updatetime = 4000
+-- Ignores case when searching patterns
+vim.opt.ignorecase = true
+-- Automatically switches to case-sensitive search if a capital letter is used
+vim.opt.smartcase = true
+-- Enables 24-bit RGB colors in the terminal
+vim.opt.termguicolors = true
+-- Configures the behavior of the insert mode completion menu
+vim.opt.completeopt = "menu,menuone,noselect,popup"
+-- Number of spaces that a <Tab> character represents
+vim.opt.tabstop = 2
+-- Number of spaces to use for each step of automatic indentation
+vim.opt.shiftwidth = 2
+-- Number of spaces that a <Tab> counts for during editing operations
+vim.opt.softtabstop = 2
+-- Converts tabs into spaces when typing
+vim.opt.expandtab = true
+-- Automatically inserts an extra level of indentation in some cases
+vim.opt.smartindent = true
+-- Makes <Tab> insert 'shiftwidth' number of spaces at the start of a line
+vim.opt.smarttab = true
+```
+
+After that I stepped through the init.lua entirely and made a list of things to keep and things to lose. Let's cover them by category.
+
+## vim.pack, Neovim's new built-in plugin manager
+
+Previously I used [folke/lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management. This worked well and was fairly easy to configure, however there was complexity in the form of having to think about and configure lazy loading. For example, in loading this colour theme I need to think about whether to load it lazy or not, the priority with respect to other plugins and what to do to configure it.
+
+```
+{
+  'shaunsingh/nord.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd "colorscheme nord"
+  end
+},
+```
+
+vim.pack's approach is a lot more vanilla. It has no lazy loading, no priority system and all plugins have to be on a remote git repo. I think you cannot use local folders or local git repos. This may make plugin development a bit tricky.
+
+If you load a lot of plugins and some of them are slow, the optimization of lazy loading is probably worth it. With vim.pack you can still do the setup functions conditionally based on autocommands if you need to.
+
+In my use case I found the start up time is 80ms and plenty fast enough for me, so I don't miss the lazy loading.
+
+To actually do the conversion you simply call vim.pack.add when you want to add a plugin, and once it is installed every command after that can use it.
+
+For example the configuration above becomes:
+
+```
+vim.pack.add({
+  { src = "https://github.com/shaunsingh/nord.nvim" },
+})
+
+vim.cmd('colorscheme nord')
+```
+
+Note that assumed Github paths are not filled out like in Lazy.nvim, you must fill them yourself, or as the documentation suggests use a helper function to generate the names.
+
+```
+local gh = function(x) return 'https://github.com/' .. x end
+local cb = function(x) return 'https://codeberg.org/' .. x end
+
+vim.pack.add({ gh('user/plugin1'), cb('user/plugin2') })
+```
+
+vim.pack keeps track of the versions you are using and saves to a lock file. This is supposed to be committed to source control and it means you can move to another machine and get the exact same plugin versions. It also means you may have merge issues if you edit the configs on different machines.
+
+Also of note is the new:restart command, which lets you iterate on changes to plugins and configuration more easily. The Neovim core restarts. With mksession you can save the current session then resume it after a restart.
+
+One more thing I like about vim.pack is it uses simple buffers as its user interface. vim.pack.update({}) shows a buffer with the packages and any updates that need doing. Simply writing the file acts as confirmation you want to go ahead. Nice.
+
+## Treesitter
+
+I ran into some issues with Treesitter as I ended up with a mix of different tree-sitter compiled grammars and different versions of Treesitter. It all worked after doing the following:
+
+Install the tree-sitter-cli, which is required by newer versions of treesitter-nvim.
+
+```
+brew install tree-sitter-cli
+```
+
+Ensure to switch to the main branch of treesitter-nvim (main is more up to date than master).
+
+```
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", 
+    version = 'main' },
+})
+```
+
+After that I was able to TSUpdate and TSInstall whatever I needed without any issues providing perfect syntax highlighting.
+
+## LSP and completion
+
+As mentioned, the bulk of my config complexity was coming from completion and LSP configuration. This complexity is greatly reduced by the following changes:
+
+1. Remove nvim-cmp and LuaSnip
+2. Use native completion
+3. Modular lsp configuration
+
+Since completion is now built-in I can turn it on with the following global settings and an LspAttach autocmd to enable it for each lsp server after checking if it is supported.
+
+```
+vim.opt.completeopt = "menu,menuone,noselect,popup" -- Ensures the menu appears even for a single match and uses the native popup window.
+vim.o.autocomplete = true -- Enables the overall completion feature.
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("lsp_completion", { clear = true }),
+  callback = function(args)
+    local client_id = args.data.client_id
+    if not client_id then
+      return
+    end
+
+    local client = vim.lsp.get_client_by_id(client_id)
+    if client and client:supports_method("textDocument/completion") then
+      -- Enable native LSP completion for this client + buffer
+      vim.lsp.completion.enable(true, client_id, args.buf, {
+        autotrigger = true,   -- auto-show menu as you type (recommended)
+        -- You can also set { autotrigger = false } and trigger manually with <C-x><C-o>
+      })
+    end
+  end,
+})
+```
+
+Finally, I still use Mason for easy management of LSP servers. What remains is to enable the servers which must be done by calling the enable method, and to configure it. For example for Python I added the following in my init.lua to enable the server.
+
+```
+vim.lsp.enable('pylsp') -- Python
+```
+
+LSP configuration can now be done using an lsp folder in your config. Each config file should be named after the LSP server. In this case I made lsp/pylsp.lua. It should simply return the configuration structure.
+
+```
+return {
+  cmd = { 'pylsp' },
+  filetypes = { 'python' },
+  settings = {
+    pylsp = {
+      plugins = {
+        mccabe = { enabled = false },
+        pycodestyle = { enabled = false },
+        flake8 = {
+          enabled = true,
+          ignore = { "E501", "E302", "W" },
+          maxLineLength = 120,
+        },
+      },
+    },
+  },
+}
+```
+
+This kind of convention over configuration appeals to me and helps keeps things organized.
+
+## New User interface (ui2) and the status line
+
+ui2 is a "is a redesign of the core messages and commandline UI, which will replace the legacy message grid in the TUI.". In particular it removes "Press Enter" interruptions, and it highlights the command line as you type. Nice.
+
+As a maintainer of a status line plugin, [battery.nvim](https://github.com/justinhj/battery.nvim) I was curious if anything had broken the statusline. Everything seemed to work without any changes.
+
+ui2 is opt-in and you can do so as follows:
+
+```
+-- New UI opt-in
+require('vim._core.ui2').enable({})
+```
+
+## The best of the rest
+
+I've kept the most minimal set of plugins for my config. In particular I still have:
+
+1. mason, mason-lspconfig – lsp server managment
+2. nvim-treesitter – tools for treesitter
+3. shaunsingh/nord.nvim – my favourite colourscheme
+4. mrjones2014/legendary.nvim – archived but still great key map manager
+5. ibhagwan/fzf-lua – fast finder for files and text within files
+6. nvim-lualine/lualine.nvim – best statusline
+7. justinhj/battery.nvim – Let me plug my own plugin
+8. nvim-lua/plenary.nvim – Useful libraries
+9. folke/which-key.nvim – Keymap display
+
+Some I may miss
+
+1. tpope/vim-fugitive – Nice Git commands, but I mostly use Git at the command line
+2. karb94/neoscroll.nvim – smooth scrolling
+
+## vim.net.request
+
+I have done some http programming in lua, mostly with the help of plenary and libuv. Adding GET requests to the built-in lua is a nice step. I would hope it gets POST and other methods to expand its utility over time.
+
+## Wrapping up
+
+There are a couple of options once you're happy with the new config. One option is to keep the old config around forever. Another would be to delete it completely.
+
+For science, on my Windows machine which I mostly use for Gaming and a bit of ML and AI, I completely deleted the old config and replaced it. On my Macbook I keep both for now.
+
+## Conclusion
+
+0.12.x is one of the biggest updates for a while in Neovim and it's great to see the out-of-the-box experience expanding. I found clearing out my configuration and refreshing it for 2026 was a good excuse to explore these new features.

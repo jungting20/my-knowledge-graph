@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/Claude Code loop — Here Are 3 Autonomous Loops For My Daily Work!.md",
+                "file": "raw/프롬프트 한 줄로 화면이 나오는 시대, ‘당근스러운 화면’을 만드는 법.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Code loop — Here Are 3 Autonomous Loops For My Daily Work!"
+              "title": "프롬프트 한 줄로 화면이 나오는 시대, ‘당근스러운 화면’을 만드는 법"
             }
           }
         ]
@@ -183,9 +183,13 @@
   },
   "active": "66741f984eb74b04",
   "lastOpenFiles": [
-    "raw/Seeing like an agent how we design tools in Claude Code.md",
-    "raw/Claude Code loop — Here Are 3 Autonomous Loops For My Daily Work!.md",
+    "raw/Ralph Loops Teaching Claude Code to Work While You Sleep.md",
+    "raw/프롬프트 한 줄로 화면이 나오는 시대, ‘당근스러운 화면’을 만드는 법.md",
     "raw/AutoBE vs. Claude Code 3rd-gen coding agent developer's review of the leaked source code.md",
+    "raw/클로드 코드 소스 유출에서 배우는 에이전트 구조.md",
+    "raw/Claude Code loop — Here Are 3 Autonomous Loops For My Daily Work!.md",
+    "raw/Seeing like an agent how we design tools in Claude Code.md",
+    "raw/Refreshing your Neovim config for 0.12.0.md",
     "graphify-out/cache/998e8937346ddf89a11474e65089d2a9b0309b25491bc7bd2e8ad6db80affbbe.json",
     "raw/HyperAgents by Meta.md",
     "raws/HyperAgents by Meta.md",
